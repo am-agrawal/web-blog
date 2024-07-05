@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@svgr/webpack": "^8.1.0",
     "daisyui": "^2.24.0",
     "graphql": "^16.5.0",
     "graphql-request": "^4.3.0",

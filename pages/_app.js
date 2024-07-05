@@ -1,14 +1,14 @@
-import React, { useEffect, useState } from 'react'
-import { Layout } from '../components'
+import React, { useEffect, useState } from 'react';
+import { LayoutV2 } from '../components';
 
-import '../styles/globals.scss'
+import '../styles/globals.scss';
 
 function MyApp({ Component, pageProps }) {
   return (
-    <Layout>
+    <LayoutV2>
       <Component {...pageProps} />
-    </Layout>
-  )
+    </LayoutV2>
+  );
 }
 
-export default MyApp
+export default MyApp;
