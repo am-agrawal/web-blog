@@ -12,3 +12,6 @@ export { default as FeaturedPostCard } from './FeaturedPostCard';
 export { default as Navbar } from './Navbar';
 export { default as LayoutV2 } from './LayoutV2';
 export { default as BuyMeACoffeeButton } from './BuyMeACoffeeButton';
+export { default as Intro } from './Intro';
+export { default as CategoriesCard } from './CategoriesCard';
+export { default as CategoryCard } from './CategoryCard';

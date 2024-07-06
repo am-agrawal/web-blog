@@ -62,3 +62,8 @@ a {
 * {
   box-sizing: border-box;
 }
+
+.dotted-grid {
+  background-size: 40px 40px;
+  background-image: radial-gradient(circle, #C0C0C0 1px, rgba(0, 0, 0, 0) 1px);
+}
