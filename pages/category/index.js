@@ -106,7 +106,7 @@ const Category = () => {
       <div className="text-slate-700 md:text-lg text-sm font-semibold mb-12">
         Browse The Categories &mdash;&mdash;
       </div>
-      <div className="grid justify-items-center lg:grid-cols-5 md:grid-cols-3 grid-cols-1 gap-14 items-center">
+      <div className="grid justify-items-center xl:grid-cols-5 lg:grid-cols-4 md:grid-cols-3 grid-cols-1 gap-14 items-center">
         {categoriesData.map((category) => (
           <CategoryCard
             key={category.id}
