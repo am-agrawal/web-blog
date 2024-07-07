@@ -1,7 +1,7 @@
 import React from 'react';
 import { faAngleRight } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import CategoryCard from './CategoryCard';
+import { CategoryCard } from '.';
 import Link from 'next/link';
 
 const CategoriesCard = () => {
@@ -111,7 +111,7 @@ const CategoriesCard = () => {
     >
       <div className="flex justify-between text-slate-700 md:text-lg text-xs font-semibold">
         <div>Browse The Categories &mdash;&mdash;</div>
-        <Link href='/category'>
+        <Link href="/category">
           <button>
             See All Categories
             <FontAwesomeIcon icon={faAngleRight} size="sm" className="ml-2" />

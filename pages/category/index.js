@@ -1,5 +1,5 @@
 import React from 'react';
-import CategoryCard from '../../components/CategoryCard';
+import { CategoryCard } from '../../components';
 
 const Category = () => {
   const categoriesData = [
@@ -106,7 +106,7 @@ const Category = () => {
       <div className="text-slate-700 md:text-lg text-sm font-semibold mb-12">
         Browse The Categories &mdash;&mdash;
       </div>
-      <div className="md:grid flex flex-col lg:grid-cols-5 md:grid-cols-3 grid-cols-1 gap-14 items-center">
+      <div className="grid justify-items-center lg:grid-cols-5 md:grid-cols-3 grid-cols-1 gap-14 items-center">
         {categoriesData.map((category) => (
           <CategoryCard
             key={category.id}
