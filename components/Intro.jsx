@@ -7,9 +7,9 @@ import Link from 'next/link';
 const Intro = () => {
   return (
     <div className="w-screen h-[calc(100vh-4rem)] bg-[#EFF0F3] dotted-grid p-10">
-      <div className="flex justify-center items-center mt-32">
+      <div className="flex justify-center items-center md:mt-32 mt-4">
         <div className="flex flex-col gap-4">
-          <div className="text-5xl font-semibold leading-snug">
+          <div className="md:text-5xl text-3xl font-semibold leading-snug">
             <div>Hi, I&apos;m Aman</div>
             <div>Full Stack Dev</div>
           </div>
@@ -20,13 +20,13 @@ const Intro = () => {
             </div>
             <div>Make sure you subscribe to get the latest updates</div>
           </div>
-          <div className="flex gap-4 mt-4">
+          <div className="flex md:flex-row flex-col gap-4 mt-4 items-center">
             <input
               type="text"
               placeholder="Enter your email"
               className="h-12 w-80 px-6 rounded-md "
             />
-            <button className="bg-violet-700 text-white px-4 font-semibold rounded-md">
+            <button className="bg-violet-700 text-white px-4 py-2 h-12 font-semibold rounded-md w-32">
               Subscribe
             </button>
           </div>
