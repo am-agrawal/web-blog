@@ -1,16 +1,23 @@
 import React from 'react';
 import { Intro, CategoriesCard } from '../../components';
+import { getCategories } from '../../services';
 
-const Home = () => {
+export default function Home({ categories }) {
   return (
     <div>
       <Intro />
 
-      <CategoriesCard />
+      <CategoriesCard categories={categories} />
 
       {/* Blogs Grid */}
     </div>
   );
 };
 
-export default Home;
+export async function getStaticProps() {
+  const categories = (await getCategories()) || []
+
+  return {
+    props: { categories }
+  }
+}
