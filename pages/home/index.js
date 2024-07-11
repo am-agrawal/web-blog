@@ -1,11 +1,12 @@
 import React from 'react';
 import { Intro, CategoriesCard } from '../../components';
-import { getCategories } from '../../services';
+import { getCategories, getConfigs } from '../../services';
 
-export default function Home({ categories }) {
+export default function Home({ intro, categories }) {
+  console.log('intro', intro);
   return (
     <div>
-      <Intro />
+      <Intro intro={intro} />
 
       <CategoriesCard categories={categories} />
 
@@ -16,8 +17,10 @@ export default function Home({ categories }) {
 
 export async function getStaticProps() {
   const categories = (await getCategories()) || []
+  const configs = (await getConfigs(['user_intro'])) || []
+  const intro = configs.find(config => config.name === 'user_intro')?.configJson || {}
 
   return {
-    props: { categories }
+    props: { intro, categories }
   }
 }
