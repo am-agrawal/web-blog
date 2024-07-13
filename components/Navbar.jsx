@@ -58,7 +58,7 @@ const Navbar = () => {
         } transition-all ease-in-out duration-700 bg-white items-center lg:gap-8 md:gap-12 gap-3 text-[14px] font-semibold text-slate-600 md:flex-row flex-col md:w-auto w-screen`}
       >
         <li className="hover:text-zinc-900">
-          <Link href="/home">Home</Link>
+          <Link href="/">Home</Link>
         </li>
         <li className="hover:text-zinc-900">
           <Link href="/category">Category</Link>
