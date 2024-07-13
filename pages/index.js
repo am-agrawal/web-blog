@@ -3,7 +3,6 @@ import { Intro, CategoriesCard } from './../components';
 import { getCategories, getConfigs } from './../services';
 
 export default function Home({ intro, categories }) {
-  console.log('intro', intro);
   return (
     <div>
       <Intro intro={intro} />
