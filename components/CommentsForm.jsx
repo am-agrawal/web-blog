@@ -1,32 +1,32 @@
-import React, { useState, useEffect, useRef } from "react"
-import { submitComment } from "../services"
+import React, { useState, useEffect, useRef } from 'react';
+import { submitComment } from '../services';
 
 const CommentsForm = ({ slug }) => {
-  const [error, setError] = useState(false)
-  const [localStrorage, setLocalStorage] = useState(null)
-  const [showSuccessMessage, setshowSuccessMessage] = useState(false)
+  const [error, setError] = useState(false);
+  const [localStrorage, setLocalStorage] = useState(null);
+  const [showSuccessMessage, setshowSuccessMessage] = useState(false);
 
-  const commentEl = useRef()
-  const nameEl = useRef()
-  const emailEl = useRef()
-  const storeDataEl = useRef()
+  const commentEl = useRef();
+  const nameEl = useRef();
+  const emailEl = useRef();
+  const storeDataEl = useRef();
 
   useEffect(() => {
-    nameEl.current.value = window.localStorage.getItem('name')
-    emailEl.current.value = window.localStorage.getItem('email')
-  }, [])
+    nameEl.current.value = window.localStorage.getItem('name');
+    emailEl.current.value = window.localStorage.getItem('email');
+  }, []);
 
   const handleCommentSubmission = () => {
-    setError(false)
+    setError(false);
 
-    const { value: comment } = commentEl.current
-    const { value: name } = nameEl.current
-    const { value: email } = emailEl.current
-    const { checked: storeData } = storeDataEl.current
+    const { value: comment } = commentEl.current;
+    const { value: name } = nameEl.current;
+    const { value: email } = emailEl.current;
+    const { checked: storeData } = storeDataEl.current;
 
     if (!comment || !name || !email) {
-      setError(true)
-      return
+      setError(true);
+      return;
     }
 
     const commentObj = {
@@ -34,28 +34,30 @@ const CommentsForm = ({ slug }) => {
       email,
       comment,
       slug,
-    }
+    };
 
     if (storeData) {
-      window.localStorage.setItem("name", name)
-      window.localStorage.setItem("email", email)
+      window.localStorage.setItem('name', name);
+      window.localStorage.setItem('email', email);
     } else {
-      window.localStorage.removeItem("name", name)
-      window.localStorage.removeItem("email", email)
+      window.localStorage.removeItem('name', name);
+      window.localStorage.removeItem('email', email);
     }
 
     submitComment(commentObj).then((res) => {
-      setshowSuccessMessage(true)
+      setshowSuccessMessage(true);
 
       setTimeout(() => {
-        setshowSuccessMessage(false)
-      }, 3000)
-    })
-  }
+        setshowSuccessMessage(false);
+      }, 3000);
+    });
+  };
 
   return (
     <div className="bg-white shadow-lg rounded-lg p-8 pb-12 mb-8">
-      <h3 className="text-xl mb-8 font-semibold border-b pb-4">Leave a Reply</h3>
+      <h3 className="text-xl mb-8 font-semibold border-b pb-4">
+        Leave a Reply
+      </h3>
       <div className="grid grid-cols-1 gap-4 mb-4">
         <textarea
           ref={commentEl}
@@ -101,7 +103,7 @@ const CommentsForm = ({ slug }) => {
         <button
           type="button"
           onClick={handleCommentSubmission}
-          className="transition duration-500 ease hover:bg-primary-focus inline-block bg-primary text-lg rounded-full text-white px-8 py-3 cursor-pointer"
+          className="transition duration-500 ease hover:bg-slate-600 inline-block bg-slate-500 text-lg rounded-full text-white px-8 py-3 cursor-pointer"
         >
           Post Comment
         </button>
@@ -112,7 +114,7 @@ const CommentsForm = ({ slug }) => {
         )}
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default CommentsForm
+export default CommentsForm;

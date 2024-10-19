@@ -4,18 +4,18 @@ import Link from "next/link"
 
 import { getRecentPosts, getSimilarPosts } from "../services"
 
-const PostWidget = ({ categories, slug }) => {
-  const [relatedPosts, setRelatedPosts] = useState([])
+const PostWidget = ({ categories, slug, relatedPosts }) => {
+  // const [relatedPosts, setRelatedPosts] = useState([])
 
-  useEffect(() => {
-    if (slug) {
-      getSimilarPosts(categories, slug).then((result) =>
-        setRelatedPosts(result)
-      )
-    } else {
-      getRecentPosts().then((result) => setRelatedPosts(result))
-    }
-  }, [slug])
+  // useEffect(() => {
+  //   if (slug) {
+  //     getSimilarPosts(categories, slug).then((result) =>
+  //       setRelatedPosts(result)
+  //     )
+  //   } else {
+  //     getRecentPosts().then((result) => setRelatedPosts(result))
+  //   }
+  // }, [slug])
 
   return (
     <div className="bg-white shadow-lg rounded-lg p-8 mb-8">
